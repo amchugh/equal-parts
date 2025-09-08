@@ -137,7 +137,6 @@ impl<'a, T> EqualParts for &'a [T] {
     fn equal_parts(self, num_parts: usize) -> Self::Iter {
         let part_size = self.len().div_ceil(num_parts);
         let small_part_count = part_size * num_parts - self.len();
-        dbg!(part_size, small_part_count);
         EqualPartsIter {
             data: self,
             part_size,
