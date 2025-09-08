@@ -1,6 +1,12 @@
 [package]
 name = "equal-parts"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2024"
+description = "An iterator that splits a collection into approximately equal parts."
+license = "Apache-2.0"
+repository = "https://github.com/amchugh/equal-parts"
+homepage = "https://github.com/amchugh/equal-parts"
+keywords = ["iterator", "chunk", "batch", "equal", "split"]
+authors = ["Aidan McHugh <mchughaw@gmail.com>"]
 
 [dependencies]
