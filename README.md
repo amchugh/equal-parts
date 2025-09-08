@@ -30,4 +30,4 @@ assert_eq!(iter.next(), None);
 
 ## License
 
-This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 License - see the [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) file for details.
