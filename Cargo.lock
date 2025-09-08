@@ -4,4 +4,4 @@ version = 4
 
 [[package]]
 name = "equal-parts"
-version = "1.0.0"
+version = "1.0.1"
