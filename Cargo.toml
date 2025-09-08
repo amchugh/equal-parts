@@ -10,3 +10,6 @@ keywords = ["iterator", "chunk", "batch", "equal", "split"]
 authors = ["Aidan McHugh <mchughaw@gmail.com>"]
 
 [dependencies]
+
+[dev-dependencies]
+clap = { version = "4.5.47", features = ["derive"] }
