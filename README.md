@@ -4,15 +4,6 @@
 
 The `equal-parts` crate provides the `EqualParts` trait, which allows you to split slices and vectors into a specified number of approximately equal-sized parts. Approximately means that the difference in size between any two parts is at most one element. When the total number of elements doesn't divide evenly, the larger parts appear first.
 
-### Installation
-
-Add this to your `Cargo.toml`:
-
-```toml
-[dependencies]
-equal-parts = "1.0.0"
-```
-
 ### Basic Example
 
 ```rust
