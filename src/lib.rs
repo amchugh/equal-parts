@@ -154,6 +154,10 @@ impl<'a, T> EqualParts for &'a Vec<T> {
     }
 }
 
+// Also include the IntoEqualParts trait
+pub mod into;
+pub use crate::into::into_equal_parts::IntoEqualParts;
+
 #[cfg(test)]
 mod tests {
     use super::EqualParts;
@@ -184,6 +188,13 @@ mod tests {
         let mut parts = data.equal_parts(3);
         assert_eq!(parts.next(), Some([1].as_slice()));
         assert_eq!(parts.next(), Some([2].as_slice()));
+        assert_eq!(parts.next(), None);
+    }
+
+    #[test]
+    fn empty_data() {
+        let data: &[i32] = &[];
+        let mut parts = data.equal_parts(3);
         assert_eq!(parts.next(), None);
     }
 
