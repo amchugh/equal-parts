@@ -8,7 +8,12 @@ repository = "https://github.com/amchugh/equal-parts"
 keywords = ["iterator", "chunk", "batch", "equal", "split"]
 authors = ["Aidan McHugh <mchughaw@gmail.com>"]
 
+[[bench]]
+name = "equal_parts_benchmarks"
+harness = false
+
 [dependencies]
 
 [dev-dependencies]
 clap = { version = "4.5.47", features = ["derive"] }
+criterion = { version = "0.5", features = ["html_reports"] }
