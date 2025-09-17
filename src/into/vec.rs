@@ -37,12 +37,8 @@ impl<T> Iterator for IntoEqualPartsIter<T> {
             return None;
         }
 
-        let chunk_size = if self.full_parts_left > 0 {
-            self.full_parts_left -= 1;
-            self.part_size
-        } else {
-            self.part_size - 1
-        };
+        let chunk_size = self.part_size - (self.full_parts_left.min(1) ^ 1);
+        self.full_parts_left -= self.full_parts_left.min(1);
         debug_assert!(chunk_size <= self.data.len());
 
         Some(self.data.drain(0..chunk_size).collect())
