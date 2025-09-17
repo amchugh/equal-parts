@@ -117,12 +117,9 @@ impl<'a, T> Iterator for EqualPartsIter<'a, T> {
         if self.data.is_empty() {
             None
         } else {
-            let split_point = if self.full_parts_left > 0 {
-                self.full_parts_left -= 1;
-                self.part_size
-            } else {
-                self.part_size - 1
-            };
+            let split_point = self.part_size - (self.full_parts_left.min(1) ^ 1);
+            self.full_parts_left -= self.full_parts_left.min(1);
+
             let (chunk, rest) = self.data.split_at(split_point);
             self.data = rest;
             Some(chunk)
